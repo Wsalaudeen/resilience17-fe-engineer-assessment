@@ -1,12 +1,15 @@
 import { Header } from "./components/header";
+import { Dashboard } from "./dashboard/dashboard";
 import "./index.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#FCFDFD]">
+    <section className="min-h-screen bg-[#FCFDFD] ">
       <Header />
-      <main></main>
-    </div>
+      <section>
+        <Dashboard />
+      </section>
+    </section>
   );
 }
 
