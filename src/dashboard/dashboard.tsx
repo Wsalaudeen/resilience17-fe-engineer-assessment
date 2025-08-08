@@ -17,10 +17,10 @@ export function Dashboard() {
     <section>
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <section className="px-9 py-3 bg-[#fcfdfd] min-h-screen flex">
-        <div className="w-[30%]">
+        <div className="lg:w-[30%] lg:block hidden">
           <Sidebar />
         </div>
-        <div className="w-[70%]">
+        <div className="lg:w-[70%] w-full">
           <Dashboardheader />
           <Dashboardtabs activeTab={activeTab} onTabChange={setActiveTab} />
           <Dashboardsummary data={dashboardsummarydata} />

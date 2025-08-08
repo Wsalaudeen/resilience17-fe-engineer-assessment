@@ -4,7 +4,6 @@ import Logo from "../../public/assets/fintrackLogo.svg";
 import UserAvatar from "../../public/assets/rightIcon.svg";
 import { useState } from "react";
 
-// components/header.tsx
 interface HeaderProps {
   searchTerm: string;
   setSearchTerm: (value: string) => void;
