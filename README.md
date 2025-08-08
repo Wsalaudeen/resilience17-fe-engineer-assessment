@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+# Wallet Ledger Dashboard
+# About
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is an implementation of a Wallet Ledger Dashboard built with React and TypeScript, based on a Figma design specification. It focuses on recreating the dashboard view with a clean UI, interactivity, responsive design, and accessibility in mind.
 
-Currently, two official plugins are available:
+# Key Highlights
+Accessibility & Inclusivity (a11y): Developed with a strong focus on inclusivity, ensuring the dashboard caters to keyboard users, mouse users, and screen readers through assistive technologies built into the website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Performance & Core Web Vitals: Prioritized performance, accessibility, SEO, and best practices.
 
-## Expanding the ESLint configuration
+Optimized Loading Times: Achieved First Contentful Paint (FCP) and Largest Contentful Paint (LCP) times of 0.7 seconds each (based on Lighthouse reports), which are well within Google’s recommended range for excellent user experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Responsive Design: Mobile-first approach, adapting seamlessly across all screen sizes.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+# Features
+Header Section with navigation, search, user avatars, and tab navigation.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Summary Cards for Total Balance, Credits, Debits, and Transactions.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Sortable Transaction Table with date, remark, amount, currency, and transaction type indicators.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Color-Coded Transactions: Green for credits, red for debits.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Hover States & Interactive Elements for better UX.
+
+#Accessibility & Inclusivity Practices
+
+Keyboard Navigation: Full support for tab navigation and focus management.
+
+Mouse Users: Clear visual indicators and hover states.
+
+Screen Readers: Semantic HTML and ARIA attributes for assistive technology compatibility.
+
+Performance Considerations: Efficient rendering and optimized assets for faster load times.
+
+# Installation
+# clone the respository 
+git clone https://github.com/Wsalaudeen/resilience17-fe-engineer-assessment
+
+# navigate into the project folder 
+cd resilience-frontend
+
+# install dependencies
+npm install
+
+# start development server  
+npm run dev
+
+# Deployment
+npm run build
+
+# Core Web vitals of the wallet ledger
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9802fe49-724d-4974-94b6-fe48b5648fe8" />
+
