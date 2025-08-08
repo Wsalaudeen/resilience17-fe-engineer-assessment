@@ -83,76 +83,129 @@ export const Summarytable = ({
 
   return (
     <section>
-      <table className="w-full table-fixed border-separate border-spacing-y-3 border-spacing-x-3 font-Public">
-        <thead className="mt-4">
-          <tr className="text-left text-[#15272D9E] font-medium text-[15px]">
-            <th
-              className="w-[55%] cursor-pointer"
-              onClick={() => toggleSort("date")}
-            >
-              <div className="flex items-center gap-1">
-                Date
-                {renderSortIcon("date")}
-              </div>
-            </th>
-            <th
-              className="w-[15%] cursor-pointer"
-              onClick={() => toggleSort("remark")}
-            >
-              <div className="flex items-center gap-1">
-                Remark
-                {renderSortIcon("remark")}
-              </div>
-            </th>
-            <th
-              className="w-[10%] cursor-pointer"
-              onClick={() => toggleSort("amount")}
-            >
-              <div className="flex items-center gap-1">
-                Amount
-                {renderSortIcon("amount")}
-              </div>
-            </th>
-            <th
-              className="w-[10%] cursor-pointer"
-              onClick={() => toggleSort("currency")}
-            >
-              <div className="flex items-center gap-1">
-                Currency
-                {renderSortIcon("currency")}
-              </div>
-            </th>
-            <th
-              className="w-[10%] cursor-pointer"
-              onClick={() => toggleSort("type")}
-            >
-              <div className="flex items-center gap-1">
-                Type
-                {renderSortIcon("type")}
-              </div>
-            </th>
-          </tr>
-        </thead>
+      <div className="hidden md:block">
+        <table className="w-full table-fixed border-separate border-spacing-y-3 border-spacing-x-3 font-Public">
+          <thead className="mt-4">
+            <tr className="text-left text-[#15272D9E] font-medium text-[15px]">
+              <th
+                className="w-[55%] cursor-pointer"
+                onClick={() => toggleSort("date")}
+              >
+                <div className="flex items-center gap-1">
+                  Date
+                  {renderSortIcon("date")}
+                </div>
+              </th>
+              <th
+                className="w-[15%] cursor-pointer"
+                onClick={() => toggleSort("remark")}
+              >
+                <div className="flex items-center gap-1">
+                  Remark
+                  {renderSortIcon("remark")}
+                </div>
+              </th>
+              <th
+                className="w-[10%] cursor-pointer"
+                onClick={() => toggleSort("amount")}
+              >
+                <div className="flex items-center gap-1">
+                  Amount
+                  {renderSortIcon("amount")}
+                </div>
+              </th>
+              <th
+                className="w-[10%] cursor-pointer"
+                onClick={() => toggleSort("currency")}
+              >
+                <div className="flex items-center gap-1">
+                  Currency
+                  {renderSortIcon("currency")}
+                </div>
+              </th>
+              <th
+                className="w-[10%] cursor-pointer"
+                onClick={() => toggleSort("type")}
+              >
+                <div className="flex items-center gap-1">
+                  Type
+                  {renderSortIcon("type")}
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedData.map(({ id, date, remark, amount, currency, type }) => (
+              <tr
+                key={id}
+                className="text-[15px] text-[#1B2528] text-left last:[&>td]:border-b-0"
+              >
+                <td className="border-b-[1.5px] border-[#49656E33] py-3">
+                  {date}
+                </td>
+                <td className="border-b-[1.5px] border-[#49656E33] py-3">
+                  {remark}
+                </td>
+                <td className="border-b-[1.5px] border-[#49656E33] py-3">
+                  {formatAmount(amount)}
+                </td>
+                <td className="border-b-[1.5px] border-[#49656E33] py-3">
+                  {currency}
+                </td>
+                <td className="border-b-[1.5px] border-[#49656E33] py-3">
+                  <div className="flex items-center gap-2 bg-[#34616F17] w-fit px-3 py-1 rounded-full">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        type.toLowerCase() === "debit"
+                          ? "bg-[#C6381B]"
+                          : "bg-[#087A2E]"
+                      }`}
+                    ></div>
+                    {type}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-        <tbody>
-          {sortedData.map(({ id, date, remark, amount, currency, type }) => (
-            <tr
-              key={id}
-              className="text-[15px] text-[#1B2528] text-left last:[&>td]:border-b-0"
-            >
-              <td className="border-b-[1.5px] border-[#49656E33] py-3">
-                {date}
-              </td>
-              <td className="border-b-[1.5px] border-[#49656E33] py-3">
-                {remark}
-              </td>
-              <td className="border-b-[1.5px] border-[#49656E33] py-3">
-                {formatAmount(amount)}
-              </td>
-              <td className="border-b-[1.5px] border-[#49656E33] py-3">
-                {currency}
-              </td>
-              <td className="border-b-[1.5px] border-[#49656E33] py-3">
+      <div className="md:hidden space-y-4 font-Public">
+        <div className="flex flex-wrap gap-2 mt-4 mb-4 py-2 px-2">
+          <button
+            onClick={() => toggleSort("date")}
+            className="flex items-center gap-1 px-3 py-2 bg-[rgba(52,97,111,0.09)] rounded-lg text-sm font-medium text-[#15272D9E]"
+          >
+            Sort by Date {renderSortIcon("date")}
+          </button>
+          <button
+            onClick={() => toggleSort("amount")}
+            className="flex items-center gap-1 px-3 py-2 bg-[rgba(52,97,111,0.09)] rounded-lg text-sm font-medium text-[#15272D9E]"
+          >
+            Sort by Amount {renderSortIcon("amount")}
+          </button>
+          <button
+            onClick={() => toggleSort("type")}
+            className="flex items-center gap-1 px-3 py-2 bg-[rgba(52,97,111,0.09)] rounded-lg text-sm font-medium text-[#15272D9E]"
+          >
+            Sort by Type {renderSortIcon("type")}
+          </button>
+        </div>
+        {sortedData.map(({ id, date, remark, amount, currency, type }) => (
+          <div
+            key={id}
+            className="bg-[#fcfdfd] border border-[#49656E33] rounded-2xl p-4"
+          >
+            <div className="flex justify-between items-start mb-3">
+              <div className="flex-1">
+                <div className="text-sm text-[#1B2528] font-medium mb-1">
+                  Date
+                </div>
+                <div className="text-[15px] text-[#1B2528] font-medium">
+                  {date}
+                </div>
+              </div>
+              <div className="ml-4">
                 <div className="flex items-center gap-2 bg-[#34616F17] w-fit px-3 py-1 rounded-full">
                   <div
                     className={`w-2 h-2 rounded-full ${
@@ -161,13 +214,29 @@ export const Summarytable = ({
                         : "bg-[#087A2E]"
                     }`}
                   ></div>
-                  {type}
+                  <span className="text-sm">{type}</span>
                 </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </div>
+            </div>
+            <div className="flex justify-between items-center mb-3">
+              <div>
+                <div className="text-sm text-[#1B2528] font-medium mb-1">
+                  Amount
+                </div>
+                <div className="text-lg text-[#1B2528] font-semibold">
+                  {formatAmount(amount)} {currency}
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="text-sm text-[#1B2528] font-medium mb-1">
+                Remark
+              </div>
+              <div className="text-[15px] text-[#1B2528]">{remark}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
