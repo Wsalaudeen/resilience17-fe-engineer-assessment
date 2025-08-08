@@ -1,5 +1,4 @@
 import { FiChevronDown, FiMoreHorizontal } from "react-icons/fi";
-
 import walletImage1 from "../../public/assets/wallet1.svg";
 import walletImage2 from "../../public/assets/wallet2.svg";
 import walletImage3 from "../../public/assets/wallet3.svg";
@@ -10,7 +9,7 @@ export function Dashboardheader() {
     <div className="mb-6 bg-[#fcfdfd] font-Public">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
         <div className="flex items-center gap-3">
-          <h1 className="text-[34px] font-bold text-[#1b2528] ">
+          <h1 className="text-[30px] font-bold text-[#1b2528] ">
             Wallet Ledger
           </h1>
           <button className="flex items-center gap-2 font-bold text-[#1b2528] cursor-pointer">
@@ -34,7 +33,6 @@ export function Dashboardheader() {
         </div>
       </div>
 
-      {/* User Avatars */}
       <div className="flex items-center gap-3">
         <div className="flex -space-x-2">
           <img

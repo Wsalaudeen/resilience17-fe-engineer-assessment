@@ -4,7 +4,13 @@ import Logo from "../../public/assets/fintrackLogo.svg";
 import UserAvatar from "../../public/assets/rightIcon.svg";
 import { useState } from "react";
 
-export function Header() {
+// components/header.tsx
+interface HeaderProps {
+  searchTerm: string;
+  setSearchTerm: (value: string) => void;
+}
+
+export function Header({ searchTerm, setSearchTerm }: HeaderProps) {
   const [showSearch, setShowSearch] = useState(false);
   const [MenuOpen, setMenuOpen] = useState(false);
 
@@ -92,6 +98,8 @@ export function Header() {
               id="header-search"
               type="text"
               placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className=" w-full max-w-[5rem] md:max-w-[20rem] lg:w-80 px-1.5 py-1  md:px-2 md:py-1 border border-[#1B2528] rounded-md text-sm bg-[#fcfdfd] shadow transition-all duration-300"
               autoFocus
               aria-label="Search"

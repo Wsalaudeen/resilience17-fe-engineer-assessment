@@ -34,8 +34,6 @@ export function Sidebar({}: SidebarProps) {
       case "Enter":
       case " ":
         e.preventDefault();
-
-        console.log(`Selected: ${menuItems[focusedIndex]}`);
         break;
       default:
         break;
