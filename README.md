@@ -24,7 +24,7 @@ Color-Coded Transactions: Green for credits, red for debits.
 
 Hover States & Interactive Elements for better UX.
 
-#Accessibility & Inclusivity Practices
+# Accessibility & Inclusivity Practices
 
 Keyboard Navigation: Full support for tab navigation and focus management.
 
